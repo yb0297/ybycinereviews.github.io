@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineReviews - Page Not Found</title>
+  <script>
+    // Single Page Application (SPA) redirect for GitHub Pages
+    // This script takes the current path and redirects to the root
+    // with the path as a query parameter, allowing the SPA router to handle it
+    var pathSegmentsToKeep = 1;
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body>
+  <div style="text-align: center; margin-top: 50px;">
+    <h1>Redirecting to CineReviews...</h1>
+    <p>If you are not redirected automatically, please <a href="/">click here</a>.</p>
+  </div>
+</body>
+</html>
