@@ -3,10 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    // Removed Replit-specific plugins for GitHub Pages
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "client/src"),
@@ -15,7 +12,7 @@ export default defineConfig({
     },
   },
   root: path.resolve(__dirname, "client"),
-  base: "/ybycinereviews.github.io/", // Important for GitHub Pages
+  base: "/", // ✅ Must be "/" for user/organization repo
   build: {
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
